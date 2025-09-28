@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Café & Código — AulaPlay (MVP)</title>
+<link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="assets/logo.svg" alt="Café & Código — AulaPlay logo"/>
+      <div>
+        <h1>AulaPlay <span class="badge">MVP</span></h1>
+        <small>Microaulas gamificadas com IA para EaD — criação rápida de quizzes, flashcards e missões.</small>
+      </div>
+    </div>
+
+    <div id="coverBanner" class="card" style="padding:0;overflow:hidden;margin-top:12px">
+      <img src="assets/cover.png" alt="Time Café & Código — Gran Hackathon 2025" style="width:100%;display:block;max-height:360px;object-fit:cover"/>
+    </div>
+
+    <div class="hero">
+      <div class="card">
+        <h2>O problema</h2>
+        <p>Baixo engajamento, desorganização de estudos e tempo limitado dos docentes para criar atividades personalizadas.</p>
+        <h2>A solução</h2>
+        <p><strong>AulaPlay</strong> ajuda professores a gerar microatividades em minutos e entrega aos alunos jornadas curtas com <em>streak</em>, pontos e feedback imediato.</p>
+        <div class="kpi">
+          <div class="item"><strong>5–10min</strong><br/><small>microaulas</small></div>
+          <div class="item"><strong>+gamification</strong><br/><small>pontos & streak</small></div>
+          <div class="item"><strong>IA-ready</strong><br/><small>RAG & guardrails</small></div>
+        </div>
+        <p style="margin-top:10px"><a class="btn" href="demo.html">▶️ Testar Demo</a> <a class="btn secondary" href="docs/pitch.html">👩‍🏫 Abrir Pitch</a></p>
+      </div>
+      <div class="card">
+        <h3>Protótipo & arquitetura (MVP offline)</h3>
+        <ul>
+          <li>Front-end estático (HTML/CSS/JS) — pronto para hospedar no GitHub Pages.</li>
+          <li>Geração de atividades via IA: integrar com <strong>Gemini</strong> ou <strong>AWS Bedrock</strong> no pós-hackathon.</li>
+          <li>RAG para personalizar a partir de PDFs do curso.</li>
+          <li>Guardrails de conteúdo e anonimização de PII.</li>
+        </ul>
+        <div class="notice">
+          <strong>Demo offline:</strong> para a banca, o gerador usa dados locais (<code>data/subjects.json</code>), evitando dependência de APIs.
+        </div>
+        <div style="margin-top:10px">
+          <span class="tag">Gamificação</span>
+          <span class="tag">RAG</span>
+          <span class="tag">LGPD</span>
+          <span class="tag">Acessibilidade</span>
+          <span class="tag">Responsividade</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Para Alunos</h3>
+        <ul>
+          <li>Missões rápidas e feedback imediato</li>
+          <li>Trilhas por nível de dificuldade</li>
+          <li>Estatísticas pessoais (pontos & streak)</li>
+        </ul>
+      </div>
+      <div class="feature">
+        <h3>Para Professores</h3>
+        <ul>
+          <li>Geração de quiz/flashcards a partir de PDFs</li>
+          <li>Banco de questões reusável</li>
+          <li>Exportação para Moodle/Google Classroom</li>
+        </ul>
+      </div>
+      <div class="feature">
+        <h3>Para a Instituição</h3>
+        <ul>
+          <li>Analytics de engajamento</li>
+          <li>Relatórios de aprendizado</li>
+          <li>Integração SSO</li>
+        </ul>
+      </div>
+    
+    <div class="feature"><strong>Clélia Merloni de Almeida (Cléo)</strong><br/><small>Gestão & Negócios</small><br/><small>Email: <a href="mailto:clelia.almeida@exemplo.com">clelia.almeida@exemplo.com</a> • LinkedIn: <a href="https://www.linkedin.com/in/clelia-merloni-de-almeida" target="_blank" rel="noopener">perfil</a></small></div><div class="feature"><strong>Darleison de Moura Rodrigues</strong><br/><small>Front-end / Back-end</small><br/><small>Email: <a href="mailto:darleison.rodrigues@exemplo.com">darleison.rodrigues@exemplo.com</a> • LinkedIn: <a href="https://www.linkedin.com/in/darleison-moura-rodrigues" target="_blank" rel="noopener">perfil</a></small></div><div class="feature"><strong>Gabriel Silveira Lima</strong><br/><small>Dev / Segurança</small><br/><small>Email: <a href="mailto:gabriel.lima@exemplo.com">gabriel.lima@exemplo.com</a> • LinkedIn: <a href="https://www.linkedin.com/in/gabriel-silveira-lima" target="_blank" rel="noopener">perfil</a></small></div><div class="feature"><strong>Vívia Paula Diniz Abreu</strong><br/><small>Organização & Produção de Materiais</small><br/><small>Email: <a href="mailto:vivia.abreu@exemplo.com">vivia.abreu@exemplo.com</a> • LinkedIn: <a href="https://www.linkedin.com/in/vivia-paula-diniz-abreu" target="_blank" rel="noopener">perfil</a></small></div></div><p style="margin-top:8px"><small><em>Observação:</em> e-mails/links estão como <strong>placeholders</strong>. Edite em <code>docs/contatos.json</code> e substitua nos arquivos se desejar.</small></p></div><div class="feature"><strong>Clélia Merloni de Almeida (Cléo)</strong><br/><small>Gestão &amp; Negócios</small></div>
+        <div class="feature"><strong>Darleison de Moura Rodrigues</strong><br/><small>Front‑end / Back‑end</small></div>
+        <div class="feature"><strong>Gabriel Silveira Lima</strong><br/><small>Dev / Segurança</small></div>
+        <div class="feature"><strong>Vívia Paula Diniz Abreu</strong><br/><small>Organização &amp; Produção de Materiais</small></div>
+      </div>
+    </div>
+    
+
+    <p class="footer">© 2025 Time Café & Código — MVP para Gran Hackathon 2025</p>
+  </div>
+</body>
+</html>

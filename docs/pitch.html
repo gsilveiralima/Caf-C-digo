@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pitch — AulaPlay (Café & Código)</title>
+<link rel="stylesheet" href="../css/styles.css"/>
+<style>
+  .slide{min-height:90vh;display:flex;flex-direction:column;justify-content:center;padding:40px 22px;border-bottom:1px dashed #2a3144}
+  .slide h1{font-size:56px}
+  .slide h2{font-size:36px}
+  .next{position:fixed;right:20px;bottom:20px}
+</style>
+</head>
+<body>
+<div class="container">
+<section class="slide">
+  <img src="../assets/logo.svg" alt="logo" style="width:340px"/>
+  <h1>AulaPlay</h1>
+  <img id="teamCover" src="../assets/cover.png" alt="Café & Código — capa" style="width:100%;max-height:420px;object-fit:cover;border:1px solid #2a3144;border-radius:12px;margin:12px 0"/>
+  <h3>Microaulas gamificadas com IA para EaD</h3>
+  <p class="muted">Time Café & Código — Gran Hackathon 2025</p>
+</section>
+<section class="slide">
+  <h2>Problema</h2>
+  <ul>
+    <li>Baixo engajamento e evasão na EaD</li>
+    <li>Produção de atividades consome tempo do professor</li>
+    <li>Falta de personalização e feedback imediato</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Solução</h2>
+  <ul>
+    <li>Geração de quizzes/flashcards a partir de PDFs (RAG)</li>
+    <li>Jornadas curtas de 5–10 min com pontos e streak</li>
+    <li>Analytics de aprendizado e engajamento</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Demonstração</h2>
+  <p>Abra <a href="../demo.html">a Demo</a> e jogue uma missão.</p>
+</section>
+<section class="slide">
+  <h2>Tecnologia</h2>
+  <ul>
+    <li>Front-end: HTML/CSS/JS (MVP offline)</li>
+    <li>IA: Gemini / Bedrock (integração no pós-hack)</li>
+    <li>RAG: embeddings + busca vetorial (PDFs das disciplinas)</li>
+    <li>Segurança: LGPD + guardrails + SSO</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Mercado & Negócio</h2>
+  <ul>
+    <li>Clientes: faculdades EAD e edtechs</li>
+    <li>Modelo: SaaS por aluno/mês</li>
+    <li>ROI: ↑ retenção, ↓ custo de produção de conteúdo</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Roadmap</h2>
+  <ol>
+    <li>Integração IA (semana 1–2): geração de questões</li>
+    <li>RAG (semana 2–3): PDFs → base vetorial</li>
+    <li>Analytics & export (semana 3–4)</li>
+  </ol>
+</section>
+\1
+  <ul id="teamSlideList"><li><small>Carregando equipe…</small></li></ul>
+
+<script>
+async function loadContacts(){
+  let data = null;
+  try{
+    const local = localStorage.getItem('teamContacts');
+    if(local){ data = JSON.parse(local); }
+  }catch(e){}
+  if(!data){
+    try{
+      const r = await fetch('docs/contatos.json');
+      if(r.ok){ data = await r.json(); }
+    }catch(e){}
+  }
+  return Array.isArray(data)?data:[];
+}
+async function renderTeamLanding(){
+  const el = document.getElementById('teamSectionDynamic');
+  if(!el) return;
+  const data = await loadContacts();
+  const wrap = document.createElement('div');
+  wrap.className = 'features';
+  wrap.style.gridTemplateColumns = 'repeat(2,1fr)';
+  data.forEach(m => {
+    const d = document.createElement('div');
+    d.className = 'feature';
+    const email = m.email ? `<a href="mailto:${m.email}">${m.email}</a>` : '';
+    const ln = m.linkedin ? ` • <a href="${m.linkedin}" target="_blank" rel="noopener">LinkedIn</a>` : '';
+    d.innerHTML = `<strong>${m.name}</strong><br/><small>${m.role||''}</small><br/><small>${email}${ln}</small>`;
+    wrap.appendChild(d);
+  });
+  el.innerHTML = '';
+  el.appendChild(wrap);
+}
+async function renderTeamSlide(){
+  const el = document.getElementById('teamSlideList');
+  if(!el) return;
+  const data = await loadContacts();
+  el.innerHTML = '';
+  data.forEach(m => {
+    const li = document.createElement('li');
+    const email = m.email ? `<a href="mailto:${m.email}">${m.email}</a>` : '';
+    const ln = m.linkedin ? ` • <a href="${m.linkedin}" target="_blank" rel="noopener">LinkedIn</a>` : '';
+    li.innerHTML = `<strong>${m.name}</strong> — ${m.role||''}<br/><small>${email}${ln}</small>`;
+    el.appendChild(li);
+  });
+}
+window.addEventListener('DOMContentLoaded', () => { renderTeamLanding(); renderTeamSlide(); });
+</script>
+
+\3
+<section class="slide">
+  <h2>Contato</h2>
+  <p>© Time Café & Código</p>
+</section>
+</div>
+</body>
+</html>

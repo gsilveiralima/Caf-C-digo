@@ -1,0 +1,34 @@
+
+:root{
+  --bg:#0f1115; --fg:#eaeef2; --muted:#a8b0b9; --primary:#c57e2e; --accent:#4dd0e1; --card:#161a22;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+.header{display:flex;align-items:center;gap:20px;margin-top:12px}
+.header img{width:140px;height:auto}
+.badge{display:inline-block;background:#1f2533;color:#cfe6ff;padding:6px 10px;border-radius:999px;font-size:12px;margin-left:8px}
+.hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:24px;margin-top:24px}
+.card{background:var(--card);border:1px solid #252b39;border-radius:16px;padding:22px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.btn{display:inline-block;background:var(--primary);color:black;font-weight:700;padding:12px 18px;border-radius:12px;border:0;cursor:pointer}
+.btn.secondary{background:#232a3a;color:var(--fg);border:1px solid #2f364a}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.feature{background:#121723;border:1px solid #252b39;border-radius:14px;padding:16px}
+.footer{margin:40px 0 20px;color:var(--muted);font-size:14px;text-align:center}
+.kpi{display:flex;gap:20px;margin-top:12px}
+.kpi .item{background:#121723;border:1px solid #252b39;border-radius:12px;padding:10px 12px}
+h1{font-size:42px;margin:8px 0 8px}
+h2{margin:6px 0 8px}
+h3{margin:6px 0 8px}
+pre{background:#0b0d12;border:1px solid #222537;color:#c8d2e2;border-radius:10px;padding:12px;overflow:auto}
+small{color:var(--muted)}
+.tag{display:inline-flex;align-items:center;gap:6px;background:#1a1f2c;color:#d9e2f2;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:12px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.center{text-align:center}
+.notice{border-left:4px solid var(--accent);padding:8px 12px;background:#111829;border-radius:8px}
+@media (max-width: 920px){
+  .hero{grid-template-columns:1fr}
+  .features{grid-template-columns:1fr;gap:12px}
+}

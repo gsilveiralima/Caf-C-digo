@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Arthur Gomes Soares",
+    "role": "Dev / No-code & Prototipagem",
+    "email": "arthur.soares@exemplo.com",
+    "linkedin": "https://www.linkedin.com/in/arthur-gomes-soares"
+  },
+  {
+    "name": "Clélia Merloni de Almeida (Cléo)",
+    "role": "Gestão & Negócios",
+    "email": "clelia.almeida@exemplo.com",
+    "linkedin": "https://www.linkedin.com/in/clelia-merloni-de-almeida"
+  },
+  {
+    "name": "Darleison de Moura Rodrigues",
+    "role": "Front-end / Back-end",
+    "email": "darleison.rodrigues@exemplo.com",
+    "linkedin": "https://www.linkedin.com/in/darleison-moura-rodrigues"
+  },
+  {
+    "name": "Gabriel Silveira Lima",
+    "role": "Dev / Segurança",
+    "email": "gabriel.lima@exemplo.com",
+    "linkedin": "https://www.linkedin.com/in/gabriel-silveira-lima"
+  },
+  {
+    "name": "Vívia Paula Diniz Abreu",
+    "role": "Organização & Produção de Materiais",
+    "email": "vivia.abreu@exemplo.com",
+    "linkedin": "https://www.linkedin.com/in/vivia-paula-diniz-abreu"
+  }
+]

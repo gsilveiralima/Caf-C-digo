@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AulaPlay — Demo</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="assets/logo.svg" alt="logo" style="width:110px"/>
+      <div><h1>Demo — AulaPlay</h1><small>Selecione um tema e responda ao quiz. Ganhe pontos com streak!</small></div>
+    </div>
+    <div id="intro" class="card">
+      <h2>Escolha um tema</h2>
+      <div id="subjects" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"></div>
+    </div>
+
+    <div id="quiz" class="card" style="display:none">
+      <h2><span id="subjectName"></span> <small id="progress" class="badge"></small></h2>
+      <p id="q" style="font-size:20px;font-weight:700"></p>
+      <div id="answers" style="display:grid;grid-template-columns:1fr 1fr;gap:10px"></div>
+      <p id="feedback" class="notice" style="display:none;margin-top:10px"></p>
+      <p id="score" class="badge" style="margin-top:10px"></p>
+    </div>
+
+    <div id="final" class="card center" style="display:none">
+      <h2>Parabéns! 🎉</h2>
+      <p>Sua pontuação: <strong id="finalScore"></strong></p>
+      <button class="btn" onclick="restart()">Jogar de novo</button>
+      <a href="index.html" class="btn secondary">Voltar</a>
+    </div>
+
+    <p class="footer">© Time Café & Código</p>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

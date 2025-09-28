@@ -1,0 +1,62 @@
+{
+  "Fundamentos de IA": {
+    "descricao": "Noções de IA generativa para educadores e alunos.",
+    "quiz": [
+      {
+        "q": "O que significa RAG?",
+        "a": [
+          "Retrieval-Augmented Generation",
+          "Recurrent Alignment Graph",
+          "Randomized AI Generation",
+          "Reactive Agent Gateway"
+        ],
+        "c": 0
+      },
+      {
+        "q": "Qual prática melhora a qualidade das respostas de um LLM?",
+        "a": [
+          "Aumentar o 'temperature' sempre",
+          "Remover contexto do prompt",
+          "Usar persona, instruções claras e exemplos",
+          "Evitar delimitar formato da saída"
+        ],
+        "c": 2
+      },
+      {
+        "q": "Em avaliação de produto, uma métrica de sucesso é:",
+        "a": [
+          "Número de commits no repositório",
+          "Engajamento e retenção dos usuários",
+          "Quantidade de classes no código",
+          "Tamanho do dataset bruto"
+        ],
+        "c": 1
+      }
+    ]
+  },
+  "Segurança Digital": {
+    "descricao": "Boas práticas de segurança para estudos e trabalho online.",
+    "quiz": [
+      {
+        "q": "O que é autenticação em dois fatores (2FA)?",
+        "a": [
+          "Uma senha mais longa",
+          "Confirmação adicional via app/SMS/chave",
+          "Criptografia de e-mails",
+          "Backup automático"
+        ],
+        "c": 1
+      },
+      {
+        "q": "Qual é uma boa prática com dados sensíveis?",
+        "a": [
+          "Compartilhar por e-mail sem criptografia",
+          "Usar links públicos",
+          "Aplicar princípios de mínimo privilégio",
+          "Salvar em qualquer nuvem sem controle"
+        ],
+        "c": 2
+      }
+    ]
+  }
+}

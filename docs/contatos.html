@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Contatos — Café & Código</title>
+<link rel="stylesheet" href="../css/styles.css"/>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <img src="../assets/logo.svg" alt="logo" style="width:120px"/>
+    <div><h1>Editor de Contatos</h1><small>Preencha abaixo. Salve no navegador e (opcional) baixe o JSON.</small></div>
+  </div>
+
+  <div class="card">
+    <form id="form"></form>
+    <div class="actions" style="display:flex;gap:10px;margin-top:10px">
+      <button class="btn" id="saveLocal" type="button">Salvar neste navegador</button>
+      <button class="btn secondary" id="download" type="button">Baixar contatos.json</button>
+    </div>
+    <p class="notice" style="margin-top:12px">
+      <strong>Dica:</strong> ao salvar no navegador, a landing (<code>index.html</code>) e os slides
+      (<code>docs/pitch.html</code>) já usarão os dados atualizados. Para compartilhar com outras máquinas,
+      baixe o <code>contatos.json</code> e substitua o arquivo em <code>docs/</code>.
+    </p>
+  </div>
+</div>
+<script>
+const DEFAULT = [
+  {
+    "name": "Arthur Gomes Soares",
+    "role": "Dev / No-code & Prototipagem",
+    "email": "arthur.soares@exemplo.com",
+    "linkedin": "https://www.linkedin.com/in/arthur-gomes-soares"
+  },
+  {
+    "name": "Clélia Merloni de Almeida (Cléo)",
+    "role": "Gestão & Negócios",
+    "email": "clelia.almeida@exemplo.com",
+    "linkedin": "https://www.linkedin.com/in/clelia-merloni-de-almeida"
+  },
+  {
+    "name": "Darleison de Moura Rodrigues",
+    "role": "Front-end / Back-end",
+    "email": "darleison.rodrigues@exemplo.com",
+    "linkedin": "https://www.linkedin.com/in/darleison-moura-rodrigues"
+  },
+  {
+    "name": "Gabriel Silveira Lima",
+    "role": "Dev / Segurança",
+    "email": "gabriel.lima@exemplo.com",
+    "linkedin": "https://www.linkedin.com/in/gabriel-silveira-lima"
+  },
+  {
+    "name": "Vívia Paula Diniz Abreu",
+    "role": "Organização & Produção de Materiais",
+    "email": "vivia.abreu@exemplo.com",
+    "linkedin": "https://www.linkedin.com/in/vivia-paula-diniz-abreu"
+  }
+];
+
+function row(i, obj){
+  return `
+  <div class="grid-2" style="margin-bottom:8px">
+    <div class="feature">
+      <label>Nome</label>
+      <input id="name_${i}" value="${obj.name||''}"/>
+      <label>Função</label>
+      <input id="role_${i}" value="${obj.role||''}"/>
+    </div>
+    <div class="feature">
+      <label>Email</label>
+      <input id="email_${i}" value="${obj.email||''}"/>
+      <label>LinkedIn</label>
+      <input id="linkedin_${i}" value="${obj.linkedin||''}"/>
+    </div>
+  </div>`;
+}
+
+function load(){
+  let data = null;
+  try{
+    const local = localStorage.getItem('teamContacts');
+    if(local) data = JSON.parse(local);
+  }catch(e){}
+  if(!Array.isArray(data) || !data.length){ data = DEFAULT; }
+  const form = document.getElementById('form');
+  form.innerHTML = data.map((m,i)=>row(i,m)).join('');
+}
+
+function saveLocal(){
+  const nodes = document.querySelectorAll('[id^="name_"]');
+  const out = [];
+  nodes.forEach((_,i)=>{
+    out.push({
+      name: document.getElementById('name_'+i).value.trim(),
+      role: document.getElementById('role_'+i).value.trim(),
+      email: document.getElementById('email_'+i).value.trim(),
+      linkedin: document.getElementById('linkedin_'+i).value.trim()
+    });
+  });
+  localStorage.setItem('teamContacts', JSON.stringify(out));
+  alert('Salvo! Abra a landing ou os slides nesta mesma janela/aba e atualize (F5).');
+}
+
+function downloadJSON(){
+  const local = localStorage.getItem('teamContacts');
+  const blob = new Blob([local || JSON.stringify(DEFAULT)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'contatos.json';
+  a.click();
+}
+
+document.getElementById('saveLocal').onclick = saveLocal;
+document.getElementById('download').onclick = downloadJSON;
+window.addEventListener('DOMContentLoaded', load);
+</script>
+</body>
+</html>
