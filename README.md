@@ -7,6 +7,12 @@ Microaulas gamificadas com IA para EaD. Este repositório contém um protótipo 
 2. Clique em **Testar Demo** para jogar.
 3. Apresente pelo `docs/pitch.html`.
 
+## Ferramentas de desenvolvimento
+- Instale a CLI Codex globalmente para auxiliar na prototipação com IA:
+  ```bash
+  npm install -g @openai/codex
+  ```
+
 ## Estrutura
 - `index.html` — landing do produto
 - `demo.html` — demonstração do quiz
