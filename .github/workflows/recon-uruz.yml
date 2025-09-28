@@ -1,0 +1,30 @@
+name: Recon Uruz
+
+on:
+  workflow_dispatch:
+    inputs:
+      domain:
+        description: 'Domain to scan'
+        required: true
+        default: 'tecnicasdeinvasao.com'
+
+jobs:
+  recon:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup
+        run: sudo apt-get update && sudo apt-get install -y whois dnsutils nmap openssl curl
+
+      - name: Run recon
+        run: |
+          DOMAIN=${{ github.event.inputs.domain }}
+          bash ./recon_uruz.sh "$DOMAIN"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: recon-results
+          path: ./output/*.tar.gz
