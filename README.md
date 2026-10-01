@@ -13,6 +13,12 @@ Não há instalação de dependências.
 3. Use **Testar Demo** para acessar a experiência.
 4. O pitch está em `docs/pitch.html`.
 
+## Ferramentas de desenvolvimento
+- Instale a CLI Codex globalmente para auxiliar na prototipação com IA:
+  ```bash
+  npm install -g @openai/codex
+  ```
+
 ## Estrutura
 
 ```text
